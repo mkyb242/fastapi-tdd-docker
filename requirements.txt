@@ -6,13 +6,18 @@
 #
 
 -i https://pypi.org/simple
+aiosqlite==0.16.1; python_version >= '3.6'
 asgiref==3.4.1; python_version >= '3.6'
 asyncpg==0.23.0
 click==8.0.1; python_version >= '3.6'
 colorama==0.4.4; platform_system == 'Windows'
 fastapi==0.65.3
 h11==0.12.0; python_version >= '3.6'
+iso8601==0.1.16
 pydantic==1.8.2; python_full_version >= '3.6.1'
+pypika-tortoise==0.1.1; python_version >= '3.7' and python_version < '4.0'
+pytz==2021.1
 starlette==0.14.2; python_version >= '3.6'
+tortoise-orm==0.17.4
 typing-extensions==3.10.0.2
 uvicorn==0.14.0
