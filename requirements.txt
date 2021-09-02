@@ -7,6 +7,7 @@
 
 -i https://pypi.org/simple
 asgiref==3.4.1; python_version >= '3.6'
+asyncpg==0.23.0
 click==8.0.1; python_version >= '3.6'
 colorama==0.4.4; platform_system == 'Windows'
 fastapi==0.65.3
