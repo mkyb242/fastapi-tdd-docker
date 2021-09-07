@@ -1,12 +1,24 @@
-from app import main
+import os
+
+import pytest
+from starlette.testclient import TestClient
+
+from app.main import create_application  # updated
+from app.config import get_settings, Settings
 
 
-def test_ping(test_app):
-    # Given
-    # test_app
+def get_settings_override():
+    return Settings(testing=1, database_url=os.environ.get("DATABASE_TEST_URL"))
 
-    # When
-    response = test_app.get("/docs")
 
-    # Then
-    assert response.status_code == 200
+@pytest.fixture(scope="module")
+def test_app():
+    # set up
+    app = create_application()  # new
+    app.dependency_overrides[get_settings] = get_settings_override
+    with TestClient(app) as test_client:  # updated
+
+        # testing
+        yield test_client
+
+    # tear down
