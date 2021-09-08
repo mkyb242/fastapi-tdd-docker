@@ -12,4 +12,3 @@ class TextSummary(models.Model):
 
 
 SummarySchema = pydantic_model_creator(TextSummary)
-### def test_read_summary_incorrect_id(test_app_with_db): https://testdriven.io/courses/tdd-fastapi/restful-routes/
